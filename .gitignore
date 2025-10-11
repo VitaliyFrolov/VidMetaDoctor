@@ -64,3 +64,11 @@ htmlcov/
 coverage.xml
 *.cover
 *.py,cover
+
+# Exiftool
+resources/exiftool/mac/exiftool
+resources/exiftool/mac/lib/
+resources/exiftool/win/exiftool.exe
+resources/exiftool/win/lib/
+resources/exiftool/linux/exiftool
+resources/exiftool/linux/lib/
