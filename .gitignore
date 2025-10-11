@@ -1,0 +1,66 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# -----------------------------
+# Virtual Environment
+# -----------------------------
+venv/
+env/
+.venv/
+
+# -----------------------------
+# Byte-compiled / optimized / DLL files
+# -----------------------------
+*.so
+*.dylib
+*.pyd
+*.dll
+
+# -----------------------------
+# Distribution / Packaging
+# -----------------------------
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+
+# -----------------------------
+# IDE / Editor files
+# -----------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.iml
+
+# -----------------------------
+# Logs and databases
+# -----------------------------
+*.log
+*.sqlite3
+*.db
+
+# -----------------------------
+# macOS
+# -----------------------------
+.DS_Store
+
+# -----------------------------
+# Windows
+# -----------------------------
+Thumbs.db
+Desktop.ini
+
+# -----------------------------
+# Tests outputs / coverage
+# -----------------------------
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
