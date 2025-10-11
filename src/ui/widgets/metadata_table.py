@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import QTableWidget, QTableWidgetItem, QHeaderView
+from PySide6.QtCore import Qt
 from core.models import VideoMetadata
 
 class MetadataTableWidget(QTableWidget):
@@ -23,7 +24,7 @@ class MetadataTableWidget(QTableWidget):
 
         for row, field in enumerate(fields):
             item_key = QTableWidgetItem(field.capitalize())
-            item_key.setFlags(item_key.flags() & ~0x2)
+            item_key.setFlags(item_key.flags() & ~Qt.ItemIsEditable)
             self.setItem(row, 0, item_key)
 
             value = getattr(metadata, field, "")

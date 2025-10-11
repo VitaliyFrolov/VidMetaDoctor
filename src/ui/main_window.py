@@ -24,7 +24,6 @@ class MainWindow(QMainWindow):
         self.metadata_table = MetadataTableWidget()
         layout.addWidget(self.metadata_table)
 
-
         open_button = QPushButton("Открыть видео")
         open_button.clicked.connect(self.open_file_dialog)
         layout.addWidget(open_button)
@@ -85,7 +84,12 @@ class MainWindow(QMainWindow):
             return
 
         updated_metadata = self.metadata_table.get_updated_metadata()
-        success = write_metadata_exiftool(self.current_file, updated_metadata, keep_backup=True)
+        success = write_metadata_exiftool(
+            self.current_file,
+            updated_metadata,
+            keep_backup=True
+        )
+
         if success:
             self.label_file.setText(f"Изменения сохранены: {self.current_file}")
         else:
