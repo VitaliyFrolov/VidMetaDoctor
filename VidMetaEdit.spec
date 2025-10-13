@@ -1,18 +1,20 @@
-# -*- mode: python ; coding: utf-8 -*-
-
 import sys
-from PyInstaller.utils.hooks import collect_submodules
+from PyInstaller.utils.hooks import collect_submodules, collect_dynamic_libs
 
 block_cipher = None
 
 hidden_imports = collect_submodules('PySide6')
 
+qt_plugins = collect_dynamic_libs('PySide6')
+
 a = Analysis(
     ['src/app.py'],
     pathex=['.'],
-    binaries=[],
+    binaries=qt_plugins,
     datas=[
-        ('resources/exiftool/**/*', 'resources/exiftool')
+        ('resources/exiftool/mac/*', 'resources/exiftool/mac'),
+        ('resources/exiftool/linux/*', 'resources/exiftool/linux'),
+        ('resources/exiftool/win/*', 'resources/exiftool/win'),
     ],
     hiddenimports=hidden_imports,
     hookspath=[],
@@ -36,7 +38,7 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=True,
+    console=False,
     disable_windowed_traceback=False,
     target_arch=None,
 )
